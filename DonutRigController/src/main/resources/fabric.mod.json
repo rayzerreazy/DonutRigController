@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "donutrig",
+  "version": "${version}",
+  "name": "Donut Rig Controller",
+  "description": "A client-side visual rig controller and outcome planner. It does not control server droppers.",
+  "authors": ["DonutRig"],
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.donutrig.DonutRigClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
