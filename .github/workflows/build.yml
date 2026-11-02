@@ -1,11 +1,9 @@
-```yaml
 name: Build DonutRigController
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -20,38 +18,13 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21
+          java-version: '21'
 
-      - name: Build with Gradle
+      - name: Build mod
         run: gradle build --no-daemon
 
-      - name: Upload compiled mod
+      - name: Upload mod JAR
         uses: actions/upload-artifact@v4
         with:
           name: DonutRigController
           path: build/libs/*.jar
-
-### Step 4 — Save it
-
-1. Click **Commit changes**.
-2. Leave the branch as `main`.
-3. Confirm the commit.
-
-### Step 5 — Watch the build
-
-Go to the **Actions** tab.
-
-You should see:
-
-`Build DonutRigController`
-
-Click it to see the build progress.
-
-- 🟡 Yellow = Building.
-- 🟢 Green = Success.
-- 🔴 Red = Error.
-
-**One thing:** Our project hasn't been compiled yet, so we'll use the first build to identify and fix any errors.
-
-absolute olliE.
-```
